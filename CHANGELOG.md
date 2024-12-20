@@ -1,4 +1,10 @@
 
+# v1.1.0 (minor release)
+
+All dependencies updated to the latest versions.
+Minimum supported Node.js version is now `18`.
+
+
 # v1.0.2 (patch release)
 
 Improved `LocaleNegotiator` typing.

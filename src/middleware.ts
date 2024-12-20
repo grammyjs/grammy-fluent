@@ -57,14 +57,14 @@ export function useFluent<
   ): Promise<void> {
 
     // A reference to the current translation function,
-    // which could be changed dynamically
+    // which could be changed dynamically.
     let translate: TranslateFunction;
 
     // Translate wrapping function that delegates
-    // all the calls to the current `translate`,
-    // using this wrapper function in the context
+    // all the calls to the current `translate`.
+    // Using this wrapper function in the context
     // allows us to update context only once and
-    // have more dynamic translate function
+    // have more dynamic translate function.
     const translateWrapper: TranslateFunction = (
       (messageId, context) => translate(messageId, context)
     );
@@ -80,8 +80,8 @@ export function useFluent<
       t: translateWrapper,
     });
 
-    // This will negotiate locale initially and set
-    // the translate function reference
+    // This will negotiate locale initially and will set
+    // the `translate` function reference.
     await negotiateLocale();
 
     await next();
@@ -89,7 +89,7 @@ export function useFluent<
 
     /**
      * Calls locale negotiator to determine the locale
-     * and updates the translate function reference to
+     * and updates the `translate` function reference to
      * use the determined locale.
      */
     async function negotiateLocale() {
@@ -105,7 +105,7 @@ export function useFluent<
     }
 
     /**
-     * Updated the translate function reference to use
+     * Updates the `translate` function reference to use
      * the specified locale.
      */
     function useLocale(locale: LocaleId) {
